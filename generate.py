@@ -13,9 +13,19 @@ pyrosim.Start_SDF("boxes.sdf")
 # pyrosim.Send_Cube(name="box2", pos=[1, y, 1.5], size=[length, width, height])
 
 # tower of cubes
-for i in range(10):
-    pyrosim.Send_Cube(name="box", pos=[x, y, z+i],
-                      size=[length*(1-(i/10)), width*(1-(i/10)), height*(1-(i/10))])
+# for i in range(10):
+#     pyrosim.Send_Cube(name="box", pos=[x, y, z+i],
+#                       size=[length*(1-(i/10)), width*(1-(i/10)), height*(1-(i/10))])
+
+# building of cubes
+# five rows
+for r in range(5):
+    # five columns
+    for c in range(5):
+        # 10 floors
+        for i in range(10):
+            pyrosim.Send_Cube(name="box", pos=[x+r, y+c, z+i],
+                              size=[length, width, height])
 
 # read it in and simulate it in simulate.py and close file
 pyrosim.End()
