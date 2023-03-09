@@ -3,16 +3,13 @@
 # use pyrosim to generate a link
 import pyrosim.pyrosim as pyrosim
 
-# variables
-[length, width, height] = [1, 1, 1]
-[x, y, z] = [0, 0, 0.5]
-
 
 def Create_World():
     # store info about world in world.sdf
     pyrosim.Start_SDF("world.sdf")
     # individual cube
-    pyrosim.Send_Cube(name="box", pos=[x, y, z], size=[length, width, height])
+    pyrosim.Send_Cube(name="box", pos=[5, 5, 0.5],
+                      size=[1, 1, 1])
     # read it in and simulate it in simulate.py and close file
     pyrosim.End()
 
@@ -23,7 +20,16 @@ Create_World()
 def Create_Robot():
     # store info about the robot
     pyrosim.Start_URDF("body.urdf")
-    pyrosim.Send_Cube(name="torso", pos=[x, y, z], size=[length, width, height])
+    # torso
+    pyrosim.Send_Cube(name="torso", pos=[0, 0, 0.5],
+                      size=[1, 1, 1])
+    # connecting joint
+    pyrosim.Send_Joint(name="torso_leg", parent="torso",
+                       child="leg", type="revolute",
+                       position=[0.5, 0, 1])
+    # leg
+    pyrosim.Send_Cube(name="leg", pos=[1, 1, 1.5],
+                      size=[1, 1, 1])
     pyrosim.End()
 
 
