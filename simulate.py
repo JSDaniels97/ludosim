@@ -13,11 +13,12 @@ p.setAdditionalSearchPath(pybullet_data.getDataPath())
 # add the forces (i.e., gravity)
 p.setGravity(0, 0, -9.8)
 
-# add a floor
+# add urdfs (Unified Robot Description Format)
 planeId = p.loadURDF("plane.urdf")
+robotId = p.loadURDF("body.urdf")
 
 # read in the world into the server
-p.loadSDF("boxes.sdf")
+p.loadSDF("world.sdf")
 
 # do the following within the world
 for i in range(1000):
