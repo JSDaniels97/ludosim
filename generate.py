@@ -1,5 +1,5 @@
 # use pyrosim to generate a link
-import pyrosim as pyrosim
+import pyrosim.pyrosim as pyrosim
 
 # # store info about world in world.sdf
 pyrosim.Start_SDF("box.sdf")
