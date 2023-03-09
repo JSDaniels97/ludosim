@@ -15,7 +15,8 @@ p.setGravity(0, 0, -9.8)
 
 # add urdfs (Unified Robot Description Format)
 planeId = p.loadURDF("plane.urdf")
-robotId = p.loadURDF("body.urdf")
+# robotId = p.loadURDF("body.urdf")
+robotId = p.loadURDF("robot_prac.urdf")
 
 # read in the world into the server
 p.loadSDF("world.sdf")

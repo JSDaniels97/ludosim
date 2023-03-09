@@ -76,4 +76,35 @@ def Create_Robot():
 
 Create_Robot()
 
+
+def robot_prac():
+    # store info about the robot
+    pyrosim.Start_URDF("robot_prac.urdf")
+
+    # DESIGN THE BODY
+    # link 0
+    pyrosim.Send_Cube(name="torso", pos=[0, 0, 1.5],
+                      size=[1, 1, 1])
+    # joint0_1
+    pyrosim.Send_Joint(name="torso_backleg", parent="torso",
+                       child="backleg", type="revolute",
+                       position=[0, 0, 1])
+    # link 1
+    pyrosim.Send_Cube(name="backleg", pos=[0, 1, -0.5],
+                      size=[1, 1, 1])
+    # joint0_2
+    pyrosim.Send_Joint(name="torso_frontleg", parent="torso",
+                       child="frontleg", type="revolute",
+                       position=[0, 0, 1])
+    # link 2
+    pyrosim.Send_Cube(name="frontleg", pos=[0, -1, -0.5],
+                      size=[1, 1, 1])
+
+
+    # end pyrosim
+    pyrosim.End()
+
+
+robot_prac()
+
 # NOTE: you must run this to generate the box.sdf file so it can be pulled into the simulation
