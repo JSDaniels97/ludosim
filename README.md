@@ -1,5 +1,6 @@
 # LuDoSim Worthrough
 
 Preparation for collaboration with Josh Bongard
-
-TEST IF WE MOVED FROM DROPBOX
+- working through LuDoSim
+- learning Git Control via PyCharm
+- simulations via PyBullet/PyRoSim
