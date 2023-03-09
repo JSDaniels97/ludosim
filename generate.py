@@ -1,3 +1,5 @@
+# GENERATE THE WORLD
+
 # use pyrosim to generate a link
 import pyrosim.pyrosim as pyrosim
 
