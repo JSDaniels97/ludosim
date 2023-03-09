@@ -17,7 +17,7 @@ p.setGravity(0, 0, -9.8)
 planeId = p.loadURDF("plane.urdf")
 
 # read in the world into the server
-p.loadSDF("box.sdf")
+p.loadSDF("boxes.sdf")
 
 # do the following within the world
 for i in range(1000):
