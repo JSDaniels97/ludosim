@@ -1,4 +1,4 @@
-# SIMULATE THE WORLD
+# SIMULATE THE WORLD (TEST)
 
 # import libraries
 import time
