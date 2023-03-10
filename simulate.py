@@ -40,7 +40,10 @@ for i in range(100):
     time.sleep(1 / 60)
     # print(i)
 
-# print sensor values
-print(backLegSensorValues)
+# # print sensor values
+# print(backLegSensorValues)
+
+# save sensor values to file
+numpy.save('sensordata', backLegSensorValues)
 
 p.disconnect()
