@@ -27,6 +27,7 @@ pyrosim.Prepare_To_Simulate(robotId)
 
 # empty array for storing sensor values
 backLegSensorValues = numpy.zeros(100)
+frontLegSensorValues = numpy.zeros(100)
 # exit()
 
 # do the following within the world
@@ -35,6 +36,7 @@ for i in range(100):
 
     # store sensor values during each step
     backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("backleg")
+    frontLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("frontleg")
     # print(backLegTouch)
 
     time.sleep(1 / 60)
@@ -44,6 +46,7 @@ for i in range(100):
 # print(backLegSensorValues)
 
 # save sensor values to file
-numpy.save('data/sensordata', backLegSensorValues)
+numpy.save('data/backLegSensorValues', backLegSensorValues)
+numpy.save('data/frontLegSensorValues', frontLegSensorValues)
 
 p.disconnect()
