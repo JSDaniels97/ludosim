@@ -27,12 +27,20 @@ p.loadSDF("world.sdf")
 pyrosim.Prepare_To_Simulate(robotId)
 
 # empty array for storing sensor values
-backLegSensorValues = numpy.zeros(100)
-frontLegSensorValues = numpy.zeros(100)
+backLegSensorValues = numpy.zeros(1000)
+frontLegSensorValues = numpy.zeros(1000)
 # exit()
 
+# open-loop movement
+targetAngles = numpy.sin(numpy.linspace(0, 2*numpy.pi, 100))
+# targetAngles = numpy.sin(numpy.linspace(-numpy.pi/4, numpy.pi/4, 1000))
+# print(targetAngles)
+numpy.save('data/targetAngles', targetAngles)
+
+exit()
+
 # do the following within the world
-for i in range(100):
+for i in range(1000):
     p.stepSimulation()
 
     # store sensor values during each step
