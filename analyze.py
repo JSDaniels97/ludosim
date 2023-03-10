@@ -10,7 +10,7 @@ print(backLegSensorValues)
 print(frontLegSensorValues)
 
 # plot
-plt.plot(backLegSensorValues)
-matplotlib.pyplot.show()
-plt.plot(frontLegSensorValues)
+plt.plot(backLegSensorValues, linewidth=10)
+plt.plot(frontLegSensorValues, linewidth=3)
+matplotlib.pyplot.legend()
 matplotlib.pyplot.show()
