@@ -44,6 +44,6 @@ for i in range(100):
 # print(backLegSensorValues)
 
 # save sensor values to file
-numpy.save('sensordata', backLegSensorValues)
+numpy.save('data/sensordata', backLegSensorValues)
 
 p.disconnect()
