@@ -6,6 +6,7 @@ import pybullet as p
 import pybullet_data
 import pyrosim.pyrosim as pyrosim
 import numpy
+import random
 
 # connect to physics server
 physicsClient = p.connect(p.GUI)
@@ -44,10 +45,16 @@ for i in range(100):
         bodyIndex=robotId,  # identify the robot the motor should attach to
         jointName=b'torso_backleg',  # what joint should the motor attach to, i.e., rotational force
         controlMode=p.POSITION_CONTROL,  # motor control, positional or velocity
-        targetPosition=0.0,  # target position, i.e., angle between two links
-        maxForce=500  # max force applied in Newton-metres
+        targetPosition=random.randrange(int(-3.1415/2.0), int(3.1415/2.0)),  # target position, i.e., angle between two links
+        maxForce=50  # max force applied in Newton-metres
     )
-
+    pyrosim.Set_Motor_For_Joint(
+        bodyIndex=robotId,  # identify the robot the motor should attach to
+        jointName=b'torso_frontleg',  # what joint should the motor attach to, i.e., rotational force
+        controlMode=p.POSITION_CONTROL,  # motor control, positional or velocity
+        targetPosition=random.randrange(int(-3.1415/2.0), int(3.1415/2.0)),  # target position, i.e., angle between two links
+        maxForce=50  # max force applied in Newton-metres
+    )
     time.sleep(1 / 60)
     # print(i)
 
