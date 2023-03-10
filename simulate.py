@@ -4,6 +4,7 @@
 import time
 import pybullet as p
 import pybullet_data
+import pyrosim.pyrosim as pyrosim
 
 # connect to physics server
 physicsClient = p.connect(p.GUI)
@@ -15,15 +16,21 @@ p.setGravity(0, 0, -9.8)
 
 # add urdfs (Unified Robot Description Format)
 planeId = p.loadURDF("plane.urdf")
-# robotId = p.loadURDF("body.urdf")
-robotId = p.loadURDF("robot_prac.urdf")
+robotId = p.loadURDF("body.urdf")
 
 # read in the world into the server
 p.loadSDF("world.sdf")
 
+# prepare to read in robots
+pyrosim.Prepare_To_Simulate(robotId)
+
 # do the following within the world
 for i in range(1000):
     p.stepSimulation()
+
+    # SENSORS
+    backLegTouch = pyrosim.Get_Touch_Sensor_Value_For_Link("backleg")
+
     time.sleep(1 / 60)
     print(i)
 p.disconnect()
