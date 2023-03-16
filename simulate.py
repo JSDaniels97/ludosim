@@ -2,6 +2,8 @@
 
 # import libraries
 import time
+
+import numpy as np
 import pybullet as p
 import pybullet_data
 import pyrosim.pyrosim as pyrosim
@@ -32,15 +34,15 @@ frontLegSensorValues = numpy.zeros(1000)
 # exit()
 
 # open-loop movement
-targetAngles = numpy.sin(numpy.linspace(0, 2*numpy.pi, 100))
-# targetAngles = numpy.sin(numpy.linspace(-numpy.pi/4, numpy.pi/4, 1000))
+# targetAngles = numpy.sin(numpy.linspace(0, 2*numpy.pi, 1000))
+targetAngles = numpy.sin(numpy.linspace(-numpy.pi/4, numpy.pi/4, 1000))
 # print(targetAngles)
 numpy.save('data/targetAngles', targetAngles)
 
 exit()
 
 # do the following within the world
-for i in range(1000):
+for i in range(1000):  # number of steps
     p.stepSimulation()
 
     # store sensor values during each step
