@@ -1,3 +1,4 @@
+# GENERATE WORLD
 import pyrosim.pyrosim as pyrosim
 
 
