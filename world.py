@@ -1,5 +1,8 @@
-class ROBOT:  # name of class
+import pybullet as p  # type: ignore
 
-    def __init__(self):  # constructor for class
-        # what constructor does
-        pass
+
+class WORLD:
+
+    def __init__(self):
+        self.planeId = p.loadURDF("plane.urdf")  # floor
+        p.loadSDF("world.sdf")
