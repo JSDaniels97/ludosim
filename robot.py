@@ -4,8 +4,10 @@ from sensor import SENSOR
 from motor import MOTOR
 
 
+# CLASS ROBOT
 class ROBOT:
 
+    # initialize sensing and saves data
     def __init__(self):
 
         self.robotId = p.loadURDF("body.urdf")  # floor
@@ -22,6 +24,7 @@ class ROBOT:
         for sensor in self.sensors.values():
             sensor.Get_Value(i)  # modifies sensor.values in place
 
+    # initialize motor movement and saves data
     def Prepare_to_Act(self):
         self.motors = {}
         for jointName in pyrosim.jointNamesToIndices:

@@ -1,6 +1,8 @@
 import pyrosim.pyrosim as pyrosim
 
 
+# GENERATE files of things in the world
+# ... a world with objects
 def Create_World():
     pyrosim.Start_SDF("world.sdf")
     width, length, height = 1, 1, 1  # box dimensions
@@ -8,6 +10,7 @@ def Create_World():
     pyrosim.End()
 
 
+# ...an empty robot (ie., no motor, sensors, brain, etc.)
 def Create_Robot():
     pyrosim.Start_URDF("body.urdf")  # stores description of robot's body
     width, length, height = 1, 1, 1  # link dimensions

@@ -5,8 +5,10 @@ import pybullet as p  # type: ignore
 from os.path import join
 
 
+# CLASS MOTOR
 class MOTOR:
 
+    # initialize motor and aray for saving data
     def __init__(self, jointName):
         self.jointName = jointName
 

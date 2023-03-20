@@ -4,8 +4,10 @@ import pyrosim.pyrosim as pyrosim
 from os.path import join
 
 
+# CLASS SENSOR
 class SENSOR:
 
+    #initialize sensor and aray for saving data
     def __init__(self, linkName):
         self.linkName = linkName
         self.values = np.zeros(c.steps)  # initialize array

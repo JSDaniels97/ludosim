@@ -7,8 +7,10 @@ import time
 import constants as c
 
 
+# CLASS SIMULATION
 class SIMULATION:
 
+    # initialize simulation
     def __init__(self):
 
         self.physicsClient = p.connect(p.GUI)
@@ -17,7 +19,7 @@ class SIMULATION:
         self.world = WORLD()
         self.robot = ROBOT()
 
-    # runs simulation
+    # runs simulation and save motor/sensor values
     def Run(self):
         for i in range(c.steps):
             time.sleep(1 / 60)
@@ -32,7 +34,6 @@ class SIMULATION:
         for sensor in self.robot.sensors.values():
             sensor.Save_Values()
 
-    # destructor
+    # destructor (ie., end simulation)
     def __del__(self):
-
         p.disconnect()
