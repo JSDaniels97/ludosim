@@ -27,6 +27,9 @@ class ROBOT:
             sensor.Get_Value(i)  # modifies sensor.values in place
 
     def Think(self, i):
+        #  update sensor neurons with sensor values
+        self.nn.Update()
+        # print the neuron's values
         self.nn.Print()
 
     # initialize motor movement and saves data

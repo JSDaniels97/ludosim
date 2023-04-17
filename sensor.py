@@ -5,6 +5,7 @@ from os.path import join
 
 
 # CLASS SENSOR
+# polls a sensor in a link, stores the value
 class SENSOR:
 
     #initialize sensor and aray for saving data
