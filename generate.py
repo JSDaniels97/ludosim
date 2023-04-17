@@ -2,6 +2,10 @@ import pyrosim.pyrosim as pyrosim
 
 
 # GENERATE files of things in the world
+# generates links and joints and sends them a urdf file
+# NOW it'll also generate neurons and synapses and send them to a nndf file
+# neural network description format file
+
 # ... a world with objects
 def Create_World():
     pyrosim.Start_SDF("world.sdf")
@@ -11,7 +15,7 @@ def Create_World():
 
 
 # ...an empty robot (ie., no motor, sensors, brain, etc.)
-def Create_Robot():
+def Generate_Body():
     pyrosim.Start_URDF("body.urdf")  # stores description of robot's body
     width, length, height = 1, 1, 1  # link dimensions
 
@@ -27,5 +31,12 @@ def Create_Robot():
     pyrosim.End()
 
 
+# ... a brain for the empty robot
+def Generate_Brain():
+    pyrosim.Start_NeuralNetwork("brain.nndf")  # stores description of robot's body
+    pyrosim.End()
+
+
 Create_World()
-Create_Robot()
+Generate_Body()
+Generate_Brain()
