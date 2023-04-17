@@ -31,7 +31,7 @@ class SIMULATION:
             self.robot.Think(i)
 
             self.robot.Act(i)
-            print(i)
+            # print(i)
 
         for motor in self.robot.motors.values():
             motor.Save_Values()
