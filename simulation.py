@@ -24,7 +24,12 @@ class SIMULATION:
         for i in range(c.steps):
             time.sleep(1 / 60)
             p.stepSimulation()
+
+            # at each step in simulation we should SENSE. THINK. ACT.
             self.robot.Sense(i)
+
+            self.robot.Think(i)
+
             self.robot.Act(i)
             print(i)
 

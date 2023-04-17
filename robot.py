@@ -24,6 +24,10 @@ class ROBOT:
         for sensor in self.sensors.values():
             sensor.Get_Value(i)  # modifies sensor.values in place
 
+
+    def Think(self, i):
+        pass
+
     # initialize motor movement and saves data
     def Prepare_to_Act(self):
         self.motors = {}

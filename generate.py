@@ -33,7 +33,11 @@ def Generate_Body():
 
 # ... a brain for the empty robot
 def Generate_Brain():
-    pyrosim.Start_NeuralNetwork("brain.nndf")  # stores description of robot's body
+    pyrosim.Start_NeuralNetwork("brain.nndf")  # stores description of robot's brain
+
+    # sensor neuron receives values from sensors in Torso
+    pyrosim.Send_Sensor_Neuron(name=0, linkName='Torso')
+
     pyrosim.End()
 
 
