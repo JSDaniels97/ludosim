@@ -40,6 +40,10 @@ def Generate_Brain():
     pyrosim.Send_Sensor_Neuron(name=1, linkName='BackLeg')
     pyrosim.Send_Sensor_Neuron(name=2, linkName='FrontLeg')
 
+    # motor neuron send values to motor
+    pyrosim.Send_Motor_Neuron(name=3, jointName='Torso_BackLeg')
+    pyrosim.Send_Motor_Neuron(name=4, jointName='Torso_FrontLeg')
+
     pyrosim.End()
 
 
